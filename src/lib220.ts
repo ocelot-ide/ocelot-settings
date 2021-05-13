@@ -265,9 +265,7 @@ function lib220(config) {
           }
         }
         const encodedURL = encodeURIComponent(url),
-              baseUrl = (window.location.hostname === 'code.ocelot-ide.org') ?
-                'https://us-central1-ocelot-ide-org.cloudfunctions.net/ocelot/' :
-                'https://us-central1-arjunguha-research-group.cloudfunctions.net/ocelot-beta/',
+              baseUrl = config.url,
               getUrlLink = `${baseUrl}geturl?`,
               queryURL = `${getUrlLink}url=${encodedURL}&user=${userEmail}&session=${sessionId}`;
         fetch(queryURL).then(response => {
