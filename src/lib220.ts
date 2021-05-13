@@ -264,10 +264,10 @@ function lib220(config) {
             runnerResult.value.onStopped();
           }
         }
-        const encodedURL = encodeURIComponent(url),
-              baseUrl = config.url,
-              getUrlLink = `${baseUrl}geturl?`,
-              queryURL = `${getUrlLink}url=${encodedURL}&user=${userEmail}&session=${sessionId}`;
+        const encodedURL = encodeURIComponent(url);
+        const baseUrl = config.baseUrl;
+        const getUrlLink = `${baseUrl}geturl?`;
+        const queryURL = `${getUrlLink}url=${encodedURL}&user=${userEmail}&session=${sessionId}`;
         fetch(queryURL).then(response => {
           if (!response.ok) {
             if (runnerResult.value.isRunning) {
